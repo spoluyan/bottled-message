@@ -1,5 +1,24 @@
 #{extends 'main.html' /}
 
+<div id="preview-modal" class="modal fade">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Preview</h4>
+			</div>
+			<div class="modal-body">
+				<p id="preview-text"></p>
+				<p id="preview-img"></p>
+				<p id="preview-video"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <form>
 	<div class="form-group">
 		<label for="name">Your name</label>
@@ -13,20 +32,56 @@
 		<label for="r-email">Recipient's e-mail</label>
 		<input type="email" class="form-control" id="r-email" placeholder="Enter your friend's e-mail">
 	</div>
+	<div id="show-text-btn" class="form-group">
+		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showTextInput()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add text
+		</button>
+	</div>
+	<div id="text" class="form-group hide">
+		<hr>
+		<p><strong>Add text</strong></p>
+		<p><textarea class="form-control" rows="3"></textarea></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideTextInput()">Cancel</button></p>
+	</div>
+	<div id="show-img-btn" class="form-group">
+		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showImgInput()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add image
+		</button>
+	</div>
+	<div id="img" class="form-group hide">
+		<hr>
+		<p><strong>Add image</strong></p>
+		<p class="text-muted">
+			We do not support image hosting at that time. Please provide link to the image. You can upload image using the following services: 
+			<a href="http://postimg.org" target="_blank">Postimage.org</a>, 
+			<a href="http://imgur.com/" target="_blank">Imgur.com</a>, 
+			<a href="https://500px.com/" target="_blank">500px.com</a> or any other that you like.
+		</p>
+		<label for="img-link">Link to image</label>
+		<p><input type="text" class="form-control" id="img-link" placeholder="Enter the URL of the image"></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideImgInput()">Cancel</button></p>
+	</div>
+	<div id="show-video-btn" class="form-group">
+		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showVideoInput()">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add video
+		</button>
+	</div>
+	<div id="video" class="form-group hide">
+		<hr>
+		<p><strong>Add video</strong></p>
+		<p class="text-muted">
+			We do not support video hosting at that time. Please provide link to the video. You can upload video using the following services: 
+			<a href="https://www.youtube.com/" target="_blank">YouTube</a>, 
+			<a href="https://vimeo.com/" target="_blank">Vimeo.com</a> or any other that you like.
+		</p>
+		<label for="img-link">Link to video</label>
+		<p><input type="text" class="form-control" id="video-link" placeholder="Enter the URL of the video"></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideVideoInput()">Cancel</button></p>
+	</div>
+	<div class="form-group">
+		<button type="button" class="btn btn-warning btn-lg btn-block" onclick="preview()">Preview</button>
+	</div>
+	<div class="form-group" onclick="sendMessage()">
+		<button type="button" class="btn btn-success btn-lg btn-block">Send</button>
+	</div>
 </form>
-
-<button type="button" class="btn btn-info btn-lg btn-block">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add text
-</button>
-<button type="button" class="btn btn-info btn-lg btn-block">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add image
-</button>
-<button type="button" class="btn btn-info btn-lg btn-block">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add video
-</button>
-<button type="button" class="btn btn-warning btn-lg btn-block">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Preview
-</button>
-<button type="button" class="btn btn-success btn-lg btn-block">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Send
-</button>
