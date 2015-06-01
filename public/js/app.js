@@ -106,3 +106,7 @@ function sendMessage() {
 function isArray(a) {
 	return (typeof a == "object") && (a instanceof Array);
 }
+
+function openBottle() {
+	
+}

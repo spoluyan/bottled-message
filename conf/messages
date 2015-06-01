@@ -1,5 +1,6 @@
 app.title=Message in a Bottle
 
+form.title=Send message in a bottle
 form.name.label=Your name
 form.name.placeholder=Enter your name
 form.email.label=Your e-mail

@@ -1,1 +1,9 @@
 #{extends 'main.html' /}
+
+<h1>You've got this message from <strong>${message.senderName}</strong> (<strong>${message.senderEmail}</strong>)</h1>
+<p><img src="@{'/public/images/bottle.jpg'}"></p>
+<p><button type="button" class="btn btn-success btn-lg btn-block" onclick="openBottle()">Open it</button></p>
+
+#{form @BottledMessage.sendBack(message.uuid), method:'GET'}
+	<p><button type="submit" class="btn btn-warning btn-lg btn-block">Send back</button></p>
+#{/form}
