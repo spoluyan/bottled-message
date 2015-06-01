@@ -1,0 +1,9 @@
+Message:
+   uuid: 123
+   senderName: test
+   senderEmail: test@test.com
+   recipientEmail: test@test.com
+   text: test
+   imageLink: http://google.com
+   videoLink: http://google.com
+   discardedTimes: 3
