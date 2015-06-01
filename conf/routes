@@ -1,9 +1,9 @@
-# Home page
 GET     /                                       BottledMessage.index
 POST    /submit                                 BottledMessage.submitMessage
 GET     /{messageUUID}                          BottledMessage.view
 GET     /{messageUUID}/open                     BottledMessage.open
 GET     /{messageUUID}/back                     BottledMessage.sendBack
+GET     /lang/{lang}                            BottledMessage.chageLanguage
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

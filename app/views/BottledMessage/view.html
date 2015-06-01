@@ -14,10 +14,10 @@
 	#{if message.text != null}
 		<p>${message.text}</p>
 	#{/if}
-	#{if message.imageLink != null}
+	#{if message.imageLink != null && message.imageLink.length() > 0}
 		<img src="${message.imageLink}">
 	#{/if}
-	#{if message.videoLink != null}
+	#{if message.videoLink != null && message.videoLink.length() > 0}
 		<h2><a href="${message.videoLink}" target="_blank">&{'open.video'}</a></h2>
 	#{/if}
 </div>

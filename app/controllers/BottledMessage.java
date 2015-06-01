@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 import models.Message;
 import play.Play;
 import play.data.validation.Validation;
+import play.i18n.Lang;
 import play.mvc.Controller;
 
 //TODO documentation
@@ -14,6 +15,11 @@ public class BottledMessage extends Controller {
 
     public static void index() {
         render();
+    }
+
+    public static void chageLanguage(String lang) {
+        Lang.change(lang);
+        index();
     }
 
     public static void submitMessage(String senderName, String senderEmail, String recipientEmail, String text,
