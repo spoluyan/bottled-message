@@ -2,6 +2,7 @@
 GET     /                                       BottledMessage.index
 POST    /submit                                 BottledMessage.submitMessage
 GET     /{messageUUID}                          BottledMessage.view
+GET     /{messageUUID}/open                     BottledMessage.open
 GET     /{messageUUID}/back                     BottledMessage.sendBack
 
 # Ignore favicon requests

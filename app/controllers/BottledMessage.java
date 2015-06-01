@@ -50,6 +50,16 @@ public class BottledMessage extends Controller {
         }
     }
 
+    public static void open(String messageUUID) {
+        Message message = Message.findByUUID(messageUUID);
+        if (message != null) {
+            message.delete();
+
+            // TODO send email
+        }
+        ok();
+    }
+
     public static void sendBack(String messageUUID) {
         Message message = Message.findByUUID(messageUUID);
         if (message != null) {

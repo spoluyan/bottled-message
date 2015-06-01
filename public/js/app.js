@@ -46,7 +46,8 @@ function preview() {
 	}
 
 	if (isVisible($('#video')) && $('#video-link').val().trim() !== '') {
-		previewVideo.html('<div class="well well-lg">' + previewVideoMsg + ' ' + $('#video-link').val() + '</div>');
+		previewVideo.html('<div class="well well-lg">' + previewVideoMsg + ' '
+				+ $('#video-link').val() + '</div>');
 	}
 
 	$('#preview-modal').modal('show');
@@ -108,5 +109,11 @@ function isArray(a) {
 }
 
 function openBottle() {
-	
+	$('#preview').addClass('hide');
+	$('#content').removeClass('hide');
+
+	$.ajax({
+		url : openAction.url(),
+		type : openAction.method
+	});
 }

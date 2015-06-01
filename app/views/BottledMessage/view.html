@@ -1,9 +1,27 @@
 #{extends 'main.html' /}
 
-<h1>You've got this message from <strong>${message.senderName}</strong> (<strong>${message.senderEmail}</strong>)</h1>
-<p><img src="@{'/public/images/bottle.jpg'}"></p>
-<p><button type="button" class="btn btn-success btn-lg btn-block" onclick="openBottle()">Open it</button></p>
+<h1>&{'open.text'} <strong>${message.senderName}</strong> (<strong>${message.senderEmail}</strong>)</h1>
 
-#{form @BottledMessage.sendBack(message.uuid), method:'GET'}
-	<p><button type="submit" class="btn btn-warning btn-lg btn-block">Send back</button></p>
-#{/form}
+<div id="preview">
+	<p><img src="@{'/public/images/bottle.jpg'}"></p>
+	<p><button type="button" class="btn btn-success btn-lg btn-block" onclick="openBottle()">&{'open.open'}</button></p>
+	
+	#{form @BottledMessage.sendBack(message.uuid), method:'GET'}
+		<p><button type="submit" class="btn btn-warning btn-lg btn-block">&{'open.discard'}</button></p>
+	#{/form}
+</div>
+<div id="content" class="hide">
+	#{if message.text != null}
+		<p>${message.text}</p>
+	#{/if}
+	#{if message.imageLink != null}
+		<img src="${message.imageLink}">
+	#{/if}
+	#{if message.videoLink != null}
+		<h2><a href="${message.videoLink}" target="_blank">&{'open.video'}</a></h2>
+	#{/if}
+</div>
+
+<script>
+	var openAction = #{jsRoute @BottledMessage.open(message.uuid) /};
+</script>
