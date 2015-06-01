@@ -1,6 +1,27 @@
 app.title=Message in a Bottle
 
+form.name.label=Your name
+form.name.placeholder=Enter your name
+form.email.label=Your e-mail
+form.email.placeholder=Enter your e-mail
+form.r-email.label=Recipient's e-mail
+form.r-email.placeholder=Enter your friend's e-mail
+form.add.text=Add text
+form.add.img=Add image
+form.add.img.text=We do not support image hosting at that time. Please provide link to the image. You can upload image using the following services:
+form.add.img.link.label=Link to the image
+form.add.img.link.placeholder=Enter the URL of the image
+form.add.video=Add video
+form.add.video.text=We do not support video hosting at that time. Please provide link to the video. You can upload video using the following services: 
+form.add.video.link.label=Link to the video
+form.add.video.link.placeholder=Enter the URL of the video
+form.add.other-links=or any other that you like
+form.add.cancel=Cancel
+form.send-btn=Send
+
+preview.title=Preview
 preview.video-msg=Video from
+preview.close=Close
 
 footer.powered=Powered with
 footer.and=and

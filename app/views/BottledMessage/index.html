@@ -4,8 +4,8 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Preview</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="&{'preview.close'}"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">&{'preview.title'}</h4>
 			</div>
 			<div class="modal-body">
 				<p id="preview-text"></p>
@@ -13,7 +13,7 @@
 				<p id="preview-video"></p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">&{'preview.close'}</button>
 			</div>
 		</div>
 	</div>
@@ -24,8 +24,8 @@
 		<div id="error-0" class="alert alert-danger hide" role="alert">
 			<p>&{'validation.empty-sender-name'}</p>
 		</div>
-		<label for="name">Your name</label>
-		<input type="text" class="form-control" id="name" placeholder="Enter your name">
+		<label for="name">&{'form.name.label'}</label>
+		<input type="text" class="form-control" id="name" placeholder="&{'form.name.placeholder'}">
 	</div>
 	<div class="form-group">
 		<div id="error-1" class="alert alert-danger hide" role="alert">
@@ -34,8 +34,8 @@
 		<div id="error-2" class="alert alert-danger hide" role="alert">
 			<p>&{'validation.invalid-sender-email'}</p>
 		</div>
-		<label for="email">Your e-mail</label>
-		<input type="email" class="form-control" id="email" placeholder="Enter your e-mail">
+		<label for="email">&{'form.email.label'}</label>
+		<input type="email" class="form-control" id="email" placeholder="&{'form.email.placeholder'}">
 	</div>
 	<div class="form-group">
 		<div id="error-3" class="alert alert-danger hide" role="alert">
@@ -44,12 +44,12 @@
 		<div id="error-4" class="alert alert-danger hide" role="alert">
 			<p>&{'validation.invalid-recipient-email'}</p>
 		</div>
-		<label for="r-email">Recipient's e-mail</label>
-		<input type="email" class="form-control" id="r-email" placeholder="Enter your friend's e-mail">
+		<label for="r-email">&{'form.r-email.label'}</label>
+		<input type="email" class="form-control" id="r-email" placeholder="&{'form.r-email.placeholder'}">
 	</div>
 	<div id="show-text-btn" class="form-group">
 		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showTextInput()">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add text
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &{'form.add.text'}
 		</button>
 	</div>
 	<div id="text" class="form-group hide">
@@ -57,31 +57,31 @@
 		<div id="error-5" class="alert alert-danger hide" role="alert">
 			<p>&{'validation.invalid-image-url'}</p>
 		</div>
-		<p><strong>Add text</strong></p>
+		<p><strong>&{'form.add.text'}</strong></p>
 		<p><textarea class="form-control" rows="3"></textarea></p>
-		<p><button type="button" class="btn btn-danger" onclick="hideTextInput()">Cancel</button></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideTextInput()">&{'form.add.cancel'}</button></p>
 	</div>
 	<div id="show-img-btn" class="form-group">
 		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showImgInput()">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add image
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &{'form.add.img'}
 		</button>
 	</div>
 	<div id="img" class="form-group hide">
 		<hr>
-		<p><strong>Add image</strong></p>
+		<p><strong>&{'form.add.img'}</strong></p>
 		<p class="text-muted">
-			We do not support image hosting at that time. Please provide link to the image. You can upload image using the following services: 
+			&{'form.add.img.text'} 
 			<a href="http://postimg.org" target="_blank">Postimage.org</a>, 
 			<a href="http://imgur.com/" target="_blank">Imgur.com</a>, 
-			<a href="https://500px.com/" target="_blank">500px.com</a> or any other that you like.
+			<a href="https://500px.com/" target="_blank">500px.com</a> &{'form.add.other-links'}.
 		</p>
-		<label for="img-link">Link to image</label>
-		<p><input type="text" class="form-control" id="img-link" placeholder="Enter the URL of the image"></p>
-		<p><button type="button" class="btn btn-danger" onclick="hideImgInput()">Cancel</button></p>
+		<label for="img-link">&{'form.add.img.link.label'}</label>
+		<p><input type="text" class="form-control" id="img-link" placeholder="&{'form.add.img.link.placeholder'}"></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideImgInput()">&{'form.add.cancel'}</button></p>
 	</div>
 	<div id="show-video-btn" class="form-group">
 		<button type="button" class="btn btn-info btn-lg btn-block" onclick="showVideoInput()">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add video
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &{'form.add.video'}
 		</button>
 	</div>
 	<div id="video" class="form-group hide">
@@ -89,21 +89,21 @@
 		<div id="error-6" class="alert alert-danger hide" role="alert">
 			<p>&{'validation.invalid-video-url'}</p>
 		</div>
-		<p><strong>Add video</strong></p>
+		<p><strong>&{'form.add.video'}</strong></p>
 		<p class="text-muted">
-			We do not support video hosting at that time. Please provide link to the video. You can upload video using the following services: 
+			&{'form.add.video.text'} 
 			<a href="https://www.youtube.com/" target="_blank">YouTube</a>, 
-			<a href="https://vimeo.com/" target="_blank">Vimeo.com</a> or any other that you like.
+			<a href="https://vimeo.com/" target="_blank">Vimeo.com</a> &{'form.add.other-links'}.
 		</p>
-		<label for="img-link">Link to video</label>
-		<p><input type="text" class="form-control" id="video-link" placeholder="Enter the URL of the video"></p>
-		<p><button type="button" class="btn btn-danger" onclick="hideVideoInput()">Cancel</button></p>
+		<label for="img-link">&{'form.add.video.link.label'}</label>
+		<p><input type="text" class="form-control" id="video-link" placeholder="&{'form.add.video.link.placeholder'}"></p>
+		<p><button type="button" class="btn btn-danger" onclick="hideVideoInput()">&{'form.add.cancel'}</button></p>
 	</div>
 	<div class="form-group">
-		<button type="button" class="btn btn-warning btn-lg btn-block" onclick="preview()">Preview</button>
+		<button type="button" class="btn btn-warning btn-lg btn-block" onclick="preview()">&{'preview.title'}</button>
 	</div>
 	<div class="form-group" onclick="sendMessage()">
-		<button type="button" class="btn btn-success btn-lg btn-block">Send</button>
+		<button type="button" class="btn btn-success btn-lg btn-block">&{'form.send-btn'}</button>
 	</div>
 </form>
 
