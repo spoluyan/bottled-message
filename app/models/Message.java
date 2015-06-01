@@ -53,6 +53,6 @@ public class Message extends Model {
     }
 
     public static Message findByUUID(String uuid) {
-        return find("byUuid").first();
+        return find("byUuid", uuid).first();
     }
 }
