@@ -1,2 +1,39 @@
 #{extends 'main.html' /}
 
+<form>
+	<div class="form-group">
+		<label for="name">Your name</label>
+		<input type="text" class="form-control" id="name" placeholder="Enter your name">
+	</div>
+	<div class="form-group">
+		<label for="email">Your e-mail</label>
+		<input type="email" class="form-control" id="email" placeholder="Enter your e-mail">
+	</div>
+	<p>
+		<strong>Or login using </strong>
+		<img src="@{'/public/images/fb.png'}" alt="Facebook">
+		<img src="@{'/public/images/gplus.png'}" alt="Google+">
+		<img src="@{'/public/images/twitter.png'}" alt="Twitter">
+		<img src="@{'/public/images/vk.png'}" alt="VKontakte">
+	</p>
+	<div class="form-group">
+		<label for="r-email">Recipient e-mail</label>
+		<input type="email" class="form-control" id="r-email" placeholder="Enter your friend's e-mail">
+	</div>
+</form>
+
+<button type="button" class="btn btn-info btn-lg btn-block">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add text
+</button>
+<button type="button" class="btn btn-info btn-lg btn-block">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add image
+</button>
+<button type="button" class="btn btn-info btn-lg btn-block">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add video
+</button>
+<button type="button" class="btn btn-warning btn-lg btn-block">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Preview
+</button>
+<button type="button" class="btn btn-success btn-lg btn-block">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Send
+</button>
