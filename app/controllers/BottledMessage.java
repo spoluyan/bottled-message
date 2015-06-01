@@ -3,6 +3,7 @@ package controllers;
 import java.util.stream.IntStream;
 
 import models.Message;
+import play.Play;
 import play.data.validation.Validation;
 import play.mvc.Controller;
 
@@ -18,12 +19,30 @@ public class BottledMessage extends Controller {
         Message message = new Message(senderName, senderEmail, recipientEmail, text, imageLink, videoLink);
         boolean valid = message.validateAndSave();
         if (valid) {
-            renderText(message.uuid);
+            renderText(buildServerPath() + message.uuid);
         } else {
             String[] errors = new String[Validation.current().errors().size() - 1];
             IntStream.range(0, Validation.current().errors().size() - 1).forEach(
                     i -> errors[i] = Validation.current().errors().get(i).getMessageKey());
             renderJSON(errors);
+        }
+    }
+
+    private static String buildServerPath() {
+        StringBuilder sb = new StringBuilder("http");
+        if (request.secure) {
+            sb.append("s");
+        }
+        sb.append("://").append(request.host).append("/").append(Play.ctxPath);
+        return sb.toString();
+    }
+
+    public static void view(String messageUUID) {
+        Message message = Message.findByUUID(messageUUID);
+        if (message == null) {
+            notFound();
+        } else {
+            render();
         }
     }
 }

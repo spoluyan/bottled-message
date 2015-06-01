@@ -51,4 +51,8 @@ public class Message extends Model {
         this.imageLink = imageLink;
         this.videoLink = videoLink;
     }
+
+    public static Message findByUUID(String uuid) {
+        return find("byUuid").first();
+    }
 }

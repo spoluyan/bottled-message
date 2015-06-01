@@ -97,7 +97,8 @@ function sendMessage() {
 				$('#' + data[i]).removeClass('hide');
 			}
 		} else {
-			//TODO
+			$('#result-text').text(data);
+			$('#success-modal').modal('show');
 		}
 	});
 }

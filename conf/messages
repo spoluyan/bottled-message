@@ -23,6 +23,9 @@ preview.title=Preview
 preview.video-msg=Video from
 preview.close=Close
 
+result.title=Message sent!
+result.msg=Your friend will get e-mail with link to your message in a bottle as soon as possible. You can also share that link with him or her:
+
 footer.powered=Powered with
 footer.and=and
 footer.inspired=Inspired by
