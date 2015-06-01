@@ -8,7 +8,6 @@ import play.data.validation.Validation;
 import play.i18n.Lang;
 import play.mvc.Controller;
 
-//TODO documentation
 public class BottledMessage extends Controller {
     private static final int MAX_DISCARD_TIMES = Integer.parseInt(Play.configuration
             .getProperty("discarded-times-to-unwant"));
