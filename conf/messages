@@ -1,3 +1,8 @@
-# You can specialize this file for each language.
-# For example, for French create a messages.fr file
-#
+app.title=Message in a Bottle
+
+footer.powered=Powered with
+footer.and=and
+footer.inspired=Inspired by
+footer.created=Created by
+footer.src=Source code is available on
+footer.version=Version
