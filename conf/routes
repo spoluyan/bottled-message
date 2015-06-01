@@ -1,5 +1,6 @@
 # Home page
 GET     /                                       BottledMessage.index
+POST    /submit                                 BottledMessage.submitMessage
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

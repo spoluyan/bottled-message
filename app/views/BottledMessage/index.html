@@ -21,14 +21,29 @@
 
 <form>
 	<div class="form-group">
+		<div id="error-0" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.empty-sender-name'}</p>
+		</div>
 		<label for="name">Your name</label>
 		<input type="text" class="form-control" id="name" placeholder="Enter your name">
 	</div>
 	<div class="form-group">
+		<div id="error-1" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.empty-sender-email'}</p>
+		</div>
+		<div id="error-2" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.invalid-sender-email'}</p>
+		</div>
 		<label for="email">Your e-mail</label>
 		<input type="email" class="form-control" id="email" placeholder="Enter your e-mail">
 	</div>
 	<div class="form-group">
+		<div id="error-3" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.empty-recipient-email'}</p>
+		</div>
+		<div id="error-4" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.invalid-recipient-email'}</p>
+		</div>
 		<label for="r-email">Recipient's e-mail</label>
 		<input type="email" class="form-control" id="r-email" placeholder="Enter your friend's e-mail">
 	</div>
@@ -39,6 +54,9 @@
 	</div>
 	<div id="text" class="form-group hide">
 		<hr>
+		<div id="error-5" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.invalid-image-url'}</p>
+		</div>
 		<p><strong>Add text</strong></p>
 		<p><textarea class="form-control" rows="3"></textarea></p>
 		<p><button type="button" class="btn btn-danger" onclick="hideTextInput()">Cancel</button></p>
@@ -68,6 +86,9 @@
 	</div>
 	<div id="video" class="form-group hide">
 		<hr>
+		<div id="error-6" class="alert alert-danger hide" role="alert">
+			<p>&{'validation.invalid-video-url'}</p>
+		</div>
 		<p><strong>Add video</strong></p>
 		<p class="text-muted">
 			We do not support video hosting at that time. Please provide link to the video. You can upload video using the following services: 
@@ -85,3 +106,8 @@
 		<button type="button" class="btn btn-success btn-lg btn-block">Send</button>
 	</div>
 </form>
+
+<script>
+	var previewVideoMsg = "&{'preview.video-msg'}";
+	var sendAction = #{jsRoute @BottledMessage.submitMessage() /};
+</script>
